@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.5;
+      padding: 20px;
+    }
+    
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      color: #0b3d91;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #555;
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+nav {
+  background-color: #0077b6;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #90e0ef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+    section {
+      background: #fff;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      color: #0b3d91;
+      margin-bottom: 15px;
+      font-size: 1.7em;
+      border-bottom: 3px solid #0b3d91;
+      padding-bottom: 6px;
+      font-weight: 700;
+    }
+    
+
+    /* About Me */
+    .about p {
+      font-size: 1.1em;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Skills */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    .skill-item {
+      flex: 0 0 120px;
+      text-align: center;
+      font-weight: 600;
+      color: #222;
+    }
+    .skill-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
+    }
+
+   
+    /* Projects */
+    .projects {
+      grid-column: 1 / -1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .projects ul {
+      list-style: none;
+    }
+    .projects li {
+      margin-bottom: 18px;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .projects li strong {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #0b3d91;
+    }
+
+    /* Certifications */
+    .certifications {
+      grid-column: 1 / -1;
+      margin-top: 50px;
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .certifications h2 {
+      margin-bottom: 30px;
+    }
+    .certifications-container {
+      overflow: hidden;
+      position: relative;
+      height: 175px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .certifications-scroll {
+      display: flex;
+      gap: 25px;
+      animation: scroll-left 30s linear infinite;
+      align-items: center;
+      /* duplicate items for infinite scroll */
+    }
+    .certifications-item {
+      flex: 0 0 auto;
+      width: 180px;
+      text-align: center;
+      color: #222;
+      font-weight: 600;
+    }
+    .certifications-item img {
+      width: 100%;
+      max-width: 180px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      margin-bottom: 8px;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 18px;
+      font-size: 1em;
+      color: white;
+      background: #0b3d91;
+      border-radius: 0 0 14px 14px;
+      user-select: none;
+    }
+    footer a {
+      color: #90caf9;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+   <header>
+    <img src="C:\Users\yarra\Downloads\babu.jpg" alt="Profile Picture" />
+    <h1>Yarragunta Babu</h1>
+    <p>Aspiring Software Engineer | python Enthusiast</p>
+  </header>
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    </ul>
+</nav>
+
+
+  <main class="grid-container">
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm a Aspiring software engineer eager to apply foundational programming skills and contribute to impactful projects. Enthusiastic about learning new technologies and collaborating with a team to grow and deliver quality software solutions.</p>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>Skills</h2>
+      <ul>
+	<li><strong>Programming Languages:</strong> C, Java, OOPS, Python, JavaScript</li>
+        <li><strong>Web Development:</strong> HTML, CSS</li>
+        <li><strong>Database Management:</strong> SQL Server</li>
+        <li><strong>Operating Systems:</strong> Windows, Linux</li>
+        <li><strong>Software Tools:</strong> MS Office, Excel with VBA</li>
+        <li>Data Structures & Algorithms</li>
+      </ul>
+    </section>
+
+        <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Portfolio Website:</strong> Created a personal portfolio using HTML, CSS, and JavaScript.</li>
+        <li><strong>Afflict Precision on Plants Using ResNet:</strong> Implemented a deep learning model based on ResNet architecture to accurately detect and classify plant diseases from leaf images, enabling precision agriculture. Achieved high classification accuracy through transfer learning and extensive image preprocessing.</li>
+        <li><strong>Image Synopsis Generating System Built using Deep
+Learning:</strong> Built a model using CNN-LSTM to generate English captions from
+images. Integrated translation and text-to-speech features using Google Translate and gTTS to support multiple languages and improve accessibility.</li>
+         <li><strong>Develop a website for giving the information about
+Organic farming:</strong>Created a responsive website to teach Farmers or users about organic farming. Included information on sustainable farming, crop rotation, natural fertilizers, and a blog for updates. Built with HTML, CSS, and JavaScript. </li>
+
+      </ul>
+    </section>
+  </main>
+
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications-container">
+      <div class="certifications-scroll">
+        <div class="certifications-item">
+          <img src="C:\Users\yarra\OneDrive\Desktop\personal portfolio\intro to python.jpg" alt="" />
+          <p>Introduction to Data Python - SAYLOR.ORG</p>
+        </div>
+
+        <div class="certifications-item">
+          <img src="C:\Users\yarra\OneDrive\Desktop\personal portfolio\ids1.jpg" alt="" />
+          <p>Introduction to Data Science - CISCO</p>
+        </div>
+        <div class="certifications-item">
+          <img src="C:\Users\yarra\OneDrive\Desktop\personal portfolio\ids.jpg" alt="" />
+          <p>Introduction to Data Science Badge - CISCO</p>
+        </div>
+        <div class="certifications-item">
+          <img src="C:\Users\yarra\OneDrive\Desktop\personal portfolio\CCNAv7 Switching, Routing, and Wireless Essentials-2.jpg" alt="" />
+          <p>CCNA(S R W E) - CISCO</p>
+        </div>
+        <div class="certifications-item">
+          <img src="C:\Users\yarra\OneDrive\Desktop\personal portfolio\CCNA R&S Introduction to Networks.jpg" alt="" />
+          <p>CCNA R&S Introduction to Networks - CISCO</p>
+        </div>
+        <div class="certifications-item">
+          <img src="C:\Users\yarra\OneDrive\Desktop\personal portfolio\PCAP - Programming Essentials in Python-4.jpg" alt="" />
+          <p>PCAP Programming Essentials in Python - CISCO </p>
+        </div>
+        <div class="certifications-item">
+          <img src="C:\Users\yarra\OneDrive\Desktop\personal portfolio\NDG Linux Unhatched-5.jpg" alt="" />
+          <p>NDG Linux Unhatched - CISCO </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Yarragunta Babu | Email: yarraguntababu123@gmail.com | LinkedIn: linkedin.com/in/yarragunta-babu-600642300/</p>
+  </footer>
+</body>
+</html>
